@@ -1,25 +1,25 @@
 public class Main {
     public static void main(String[] args) {
         Person mom = new PersonBuilder()
-                .setName("Анна")
-                .setSurname("Вольф")
+                .setName("РђРЅРЅР°")
+                .setSurname("Р’РѕР»СЊС„")
                 .setAge(31)
-                .setAddress("Сидней")
+                .setAddress("РЎРёРґРЅРµР№")
                 .build();
         Person son = mom.newChildBuilder()
-                .setName("Антошка")
+                .setName("РђРЅС‚РѕС€РєР°")
                 .build();
-        System.out.println("У " + mom + " есть сын, " + son);
+        System.out.println("РЈ " + mom + " РµСЃС‚СЊ СЃС‹РЅ, " + son);
 
         try {
-            // Не хватает обязательных полей
+            // РќРµ С…РІР°С‚Р°РµС‚ РѕР±СЏР·Р°С‚РµР»СЊРЅС‹С… РїРѕР»РµР№
             new PersonBuilder().build();
         } catch (IllegalStateException e) {
             e.printStackTrace();
         }
 
         try {
-            // Не хватает обязательных полей
+            // РќРµ С…РІР°С‚Р°РµС‚ РѕР±СЏР·Р°С‚РµР»СЊРЅС‹С… РїРѕР»РµР№
             new PersonBuilder()
                     .setAddress("Some address")
                     .build();
@@ -27,7 +27,7 @@ public class Main {
             e.printStackTrace();
         }
         try {
-            // Не хватает обязательных полей
+            // РќРµ С…РІР°С‚Р°РµС‚ РѕР±СЏР·Р°С‚РµР»СЊРЅС‹С… РїРѕР»РµР№
             new PersonBuilder()
                     .setName("Some Name")
                     .build();
@@ -36,7 +36,7 @@ public class Main {
         }
 
         try {
-            // Не хватает обязательных полей
+            // РќРµ С…РІР°С‚Р°РµС‚ РѕР±СЏР·Р°С‚РµР»СЊРЅС‹С… РїРѕР»РµР№
             new PersonBuilder()
                     .setSurname("Some Surname")
                     .build();
@@ -44,7 +44,7 @@ public class Main {
             e.printStackTrace();
         }
         try {
-            // Возраст недопустимый
+            // Р’РѕР·СЂР°СЃС‚ РЅРµРґРѕРїСѓСЃС‚РёРјС‹Р№
             new PersonBuilder().setAge(-100).build();
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
